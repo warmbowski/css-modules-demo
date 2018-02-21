@@ -14,7 +14,7 @@ export default class Button extends Component {
             PropTypes.node,
         ]),
         href: PropTypes.string,
-        size: PropTypes.string,
+        size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
         btnType: PropTypes.string,
         ignoreResponsive: PropTypes.bool
     };
@@ -32,16 +32,16 @@ export default class Button extends Component {
 
     handleClassName = () => {
         const { className, disabled, ignoreResponsive } = this.props;
-        const defaultClassName = styles['os-btn-cl'];
-        const size = styles[`btn-cl-${this.props.size}`] || '';
-        const type = this.handleType();
-        const main = ` ${styles[type] || ''} ${styles[size] || ''} ${disabled ? styles['btn-cl-disabled'] : ''}`;
+        const defaultClass = styles['os-btn-cl'];
+        const sizeClass = styles[`btn-cl-${this.props.size}`] || '';
+        const typeClass = this.handleType();
+        const main = ` ${typeClass} ${sizeClass} ${disabled ? styles['btn-cl-disabled'] : ''}`;
         // if ignoreResponsive is true, don't add 100% width class
-        const responsiveCheck = ignoreResponsive ? ` ${main}` : ` ${main} ${styles['btn-cl-is-responsive']}`;
+        const responsiveCheck = ` ${main} ${ignoreResponsive ? '' : styles['btn-cl-is-responsive']}`;
         const trimMain = responsiveCheck.replace(/\s{2,}/g, ' '); // If type is empty remove the extra empty whitespace. Keep the class clean.
         const buildClass = className ? `${trimMain} ${className}` : `${trimMain}`;
 
-        return defaultClassName.concat(buildClass);
+        return defaultClass.concat(buildClass);
     };
 
     handleErrors = function handleErrors(msg) {

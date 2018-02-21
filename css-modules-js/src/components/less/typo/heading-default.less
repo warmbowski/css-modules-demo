@@ -1,0 +1,145 @@
+@import "../colors/color-default.less"; // Color
+@import "font.less"; // Font 
+@import "../responsive/config.less"; // Responsive breakpoints
+// HEADING
+.heading-default() {
+    font-family: @default-font;
+    font-weight: @default-font-weight;
+    color: @sg_colorTextHeading;
+    margin-top: 0;
+    margin-bottom: .4em;
+}
+
+// Heading
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .heading-default();
+}
+
+h1.heading-lg {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h4 {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+h5 {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+h6 {
+    font-size: 12px;
+    font-weight: @default-font-weight-bold;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+@media(max-width:@smScreenWidth) {
+    h1 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    h3 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    h4 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    h5 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+}
+
+// Marketing overrides
+.editorial-title {
+    font-weight: @default-font-weight-bold;
+}
+
+// Paragraphs that accompany headings
+@textSizeSm: 13px;
+@textSizeDefault: 14px;
+@textSizeLg: 16px;
+.sm-body-default {
+    font-size: @textSizeSm;
+    color: @sg_colorTextDefault;
+    font-weight: @default-font-weight;
+    line-height: 20px;
+}
+
+.body-default {
+    font-size: @textSizeDefault;
+    color: @sg_colorTextDefault;
+    font-weight: @default-font-weight;
+    line-height: 21px;
+}
+
+.lg-body-default {
+    font-size: @textSizeLg;
+    color: @sg_colorTextDefault;
+    font-weight: @default-font-weight;
+    line-height: 24px;
+}
+
+// Text specifics
+.text-lg {
+    font-size: @textSizeLg;
+    color: @sg_colorTextDefault;
+}
+
+.text-lg-light {
+    font-size: @textSizeLg;
+    color: @sg_colorTextLight;
+}
+
+.text {
+    font-size: @textSizeDefault;
+    color: @sg_colorTextDefault;
+}
+
+.text-light {
+    font-size: @textSizeDefault;
+    color: @sg_colorTextLight;
+}
+
+.text-sm {
+    font-size: @textSizeSm;
+    color: @sg_colorTextDefault;
+}
+
+.text-sm-light {
+    font-size: @textSizeSm;
+    color: @sg_colorTextLight;
+}

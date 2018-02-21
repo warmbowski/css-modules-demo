@@ -1,0 +1,118 @@
+// RESPONSIVE CONFIG
+@import "../../less/responsive/config.less";
+// COLORS
+@import "../../less/colors/color-default.less";
+// TYPO
+@import "../../less/typo/font.less";
+
+@dd-lgFontSize: 16px;
+@dd-mdFontSize: 14px;
+@dd-smFontSize: 12px;
+@dd-padding: .78571429em 10px .78571429em 15px;
+
+.os-dropdown {
+    display: block;
+    cursor: pointer;
+    font-size: @dd-mdFontSize;
+    font-family: "Helvetica Neue",Helvetica,Arial;
+    color: #545658;
+    background-color: #fff;
+    border: 1px solid #CED1D5;
+    box-shadow: 0 2px 2px 0 rgba(84,86,88,.06);
+    border-radius: 3px;
+    position: relative;
+    text-align: left;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    min-width: 0;
+    min-height: 36px;
+    width: 100%;
+    display: block;
+    -webkit-transition: box-shadow .1s ease,width .1s ease;
+    transition: box-shadow .1s ease,width .1s ease;
+}
+
+.os-dropdown.dropdown-lg {
+    min-height: 42px;
+    font-size: @dd-lgFontSize;
+}
+
+.os-dropdown.dropdown-sm {
+    font-size: @dd-smFontSize;
+    min-height: 28px;
+}
+
+.os-dropdown .active {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.os-dropdown-header {
+    padding: @dd-padding;
+    color: #9b9b9b;
+}
+.os-dropdown .os-dropdown-icon {
+    float: right
+}
+.os-dropdown.disabled, .os-dropdown-option-listitem.disabled {
+    cursor: not-allowed;
+    opacity: .5
+}
+.os-dropdown-option-list {
+    cursor: auto;
+    position: absolute;
+    display: none;
+    left: 0%;
+    background: #fff;
+    font-size: inherit;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid rgba(34,36,38,.15);
+    border-top-width: 0!important;
+    margin: 0 -1px;
+    min-width: 100%;
+    width: 100%;
+    max-height: 200px;
+    border-radius: 0 0 .28571429rem .28571429rem;
+    box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
+    -webkit-transition: opacity .1s ease;
+    transition: opacity .1s ease;
+    z-index: 11;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.os-dropdown-option-listitem {
+    cursor: pointer;
+    padding: @dd-padding;
+    position: relative;
+    font-size: inherit;
+    word-wrap: normal;
+}
+
+.transition {
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.visible.transition {
+    display: block!important;
+    visibility: visible!important;
+}
+
+.push-content {
+    position: relative !important;
+}
+
+@media (max-width: 543px) {
+    .os-dropdown {
+        display: block;
+    }
+}

@@ -1,0 +1,101 @@
+@import "../colors/color-default.less";
+@import "../typo/font.less";
+@input-lgHeight: 44px;
+@input-lgFontSize: 16px;
+@input-height: 34px;
+@input-fontSize: 14px;
+@input-smHeight: 30px;
+@input-smFontSize: 12px;
+// CONTROL
+.os-input-control {
+    &.input-block {
+        &>* {
+            display: block;
+        }
+        &>label {
+            margin-bottom: 10px;
+        }
+        & .os-input {
+            width: 100%;
+        }
+    }
+    &.input-inline {
+        &>* {
+            display: inline-block;
+        }
+        &>label {
+            margin-right: 10px;
+        }
+        & .os-input {
+            width: auto;
+        }
+    }
+    & .input-error {
+        color: #AC1B25;
+        font-size: 12px;
+        display: none;
+        padding: 10px 0 0 10px;
+    }
+    &.has-error {
+        & .input-error {
+            display: block;
+        }
+        & .os-input {
+            border: 1px solid @sg_colorInputError;
+        }
+    }
+    &.has-warning {
+        & .input-error {
+            display: block;
+            color: @sg_colorInputWarn;
+        }
+        & .os-input {
+            border: 1px solid @sg_colorInputWarn;
+        }
+    }
+    &.has-success {
+        & .input-error {
+            display: block;
+            color: @sg_colorInputSuccess;
+        }
+        & .os-input {
+            border: 1px solid @sg_colorInputSuccess;
+        }
+    }
+}
+
+// TEXTBOX
+.os-input {
+    font-family: @default-font;
+    font-size: @input-fontSize;
+    height: @input-height;
+    color: @sg_colorInputText;
+    border: 1px solid @sg_colorInputBorder;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(84, 86, 88, .06);
+    padding: 0 5px 0 15px;
+    box-sizing: border-box; // SIZING
+    &.input-lg {
+        height: @input-lgHeight;
+        font-size: @input-lgFontSize;
+    }
+    &.input-sm {
+        height: @input-smHeight;
+        font-size: @input-smFontSize;
+    } // STATES
+    &:focus {
+        border: 1px solid @sg_colorInputFocus;
+    }
+    &.disabled {
+        opacity: .5;
+        background: transparent;
+        cursor: not-allowed;
+    } // PLACEHOLDER
+    &::placeholder {
+        opacity: .7;
+        color: #545658;
+    }
+}
+textarea.os-input {
+  padding: 8px 5px 8px 15px;
+}

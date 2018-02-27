@@ -32,16 +32,14 @@ export default class Button extends Component {
 
     handleClassName = () => {
         const { className, disabled, ignoreResponsive } = this.props;
-        const defaultClass = styles.default;
         const sizeClass = styles[`${this.props.size}`] || '';
         const typeClass = this.handleType();
         const main = ` ${typeClass} ${sizeClass} ${disabled ? styles.disabled : ''}`;
         // if ignoreResponsive is true, don't add 100% width class
         const responsiveCheck = ` ${main} ${ignoreResponsive ? '' : styles.responsive}`;
         const trimMain = responsiveCheck.replace(/\s{2,}/g, ' '); // If type is empty remove the extra empty whitespace. Keep the class clean.
-        const buildClass = className ? `${trimMain} ${className}` : `${trimMain}`;
-
-        return defaultClass.concat(buildClass);
+        
+        return className ? `${trimMain} ${className}` : `${trimMain}`;
     };
 
     handleErrors = function handleErrors(msg) {
@@ -59,7 +57,7 @@ export default class Button extends Component {
             this.handleErrors(errorMsg.multiType);
         }
 
-        return styles[`${btnType}`] || '';
+        return styles[`${btnType}`] || styles.default;
     };
 
     handleIcon = child => (

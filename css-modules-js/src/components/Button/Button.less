@@ -5,41 +5,41 @@
 // TYPO
 @import "../less/typo/font.less";
 // VARIABLES
-@btn-lgFontSize: 16px;
-@btn-mdFontSize: 14px;
-@btn-smFontSize: 12px;
-@btn-xsFontSize: 11px;
-@btn-lgHeight: 44px;
-@btn-mdHeight: 34px;
-@btn-smHeight: 30px;
-@btn-xsHeight: 22px;
-@btn-lgPadLeftRight: 20px;
-@btn-mdPadLeftRight: 15px;
-@btn-smPadLeftRight: 15px;
-@btn-xsPadLeftRight: 10px;
+@value lgFontSize: 16px;
+@value mdFontSize: 14px;
+@value smFontSize: 12px;
+@value xsFontSize: 11px;
+@value lgHeight: 44px;
+@value mdHeight: 34px;
+@value smHeight: 30px;
+@value xsHeight: 22px;
+@value lgPadLeftRight: 20px;
+@value mdPadLeftRight: 15px;
+@value smPadLeftRight: 15px;
+@value xsPadLeftRight: 10px;
 // BUTTONS
 .default {
     position: relative;
     background-color: @sg_colorBtn;
     color: @sg_colorBtnText;
     font-family: @default-font;
-    font-size: @btn-mdFontSize;
+    font-size: mdFontSize;
     font-weight: normal;
     letter-spacing: normal;
-    height: @btn-mdHeight;
+    height: mdHeight;
     border: none;
     border-radius: 3px;
-    padding: 0px @btn-mdPadLeftRight;
+    padding: 0px mdPadLeftRight;
     cursor: pointer;
     outline: none;
     &.rounded {
-        border-radius: @btn-mdHeight;
+        border-radius: mdHeight;
     }
     // to make 'anchor buttons' look like buttons
     // button.js component switches 'button' tag to 'a' tag when href is passed in as prop
     // putting the '&' after the tag allows in less in this case means 'a.os-btn-cl'
     a& {
-        line-height: @btn-mdHeight;
+        line-height: mdHeight;
         display: inline-block;
         text-decoration: none;
     }
@@ -292,36 +292,36 @@
 
 // SIZES
 .xs {
-    font-size: @btn-xsFontSize;
-    height: @btn-xsHeight;
-    padding: 0px @btn-xsPadLeftRight;
+    font-size: xsFontSize;
+    height: xsHeight;
+    padding: 0px xsPadLeftRight;
     &.rounded {
-        border-radius: @btn-xsHeight
+        border-radius: xsHeight
     }
     a& {
-        line-height: @btn-xsHeight;
+        line-height: xsHeight;
     }
 }
 .sm {
-    font-size: @btn-smFontSize;
-    height: @btn-smHeight;
-    padding: 0px @btn-smPadLeftRight;
+    font-size: smFontSize;
+    height: smHeight;
+    padding: 0px smPadLeftRight;
     &.rounded {
-        border-radius: @btn-smHeight;
+        border-radius: smHeight;
     }
     a& {
-        line-height: @btn-smHeight;
+        line-height: smHeight;
     }
 }
 .lg {
-    font-size: @btn-lgFontSize;
-    height: @btn-lgHeight;
-    padding: 0px @btn-lgPadLeftRight;
+    font-size: lgFontSize;
+    height: lgHeight;
+    padding: 0px lgPadLeftRight;
     &.rounded {
-        border-radius: @btn-lgHeight;
+        border-radius: lgHeight;
     }
     a& {
-        line-height: @btn-lgHeight;
+        line-height: lgHeight;
     }
 }
 .fullWidth {

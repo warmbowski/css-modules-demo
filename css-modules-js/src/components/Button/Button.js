@@ -32,12 +32,12 @@ export default class Button extends Component {
 
     handleClassName = () => {
         const { className, disabled, ignoreResponsive } = this.props;
-        const defaultClass = styles['os-btn-cl'];
-        const sizeClass = styles[`btn-cl-${this.props.size}`] || '';
+        const defaultClass = styles.default;
+        const sizeClass = styles[`${this.props.size}`] || '';
         const typeClass = this.handleType();
-        const main = ` ${typeClass} ${sizeClass} ${disabled ? styles['btn-cl-disabled'] : ''}`;
+        const main = ` ${typeClass} ${sizeClass} ${disabled ? styles.disabled : ''}`;
         // if ignoreResponsive is true, don't add 100% width class
-        const responsiveCheck = ` ${main} ${ignoreResponsive ? '' : styles['btn-cl-is-responsive']}`;
+        const responsiveCheck = ` ${main} ${ignoreResponsive ? '' : styles.responsive}`;
         const trimMain = responsiveCheck.replace(/\s{2,}/g, ' '); // If type is empty remove the extra empty whitespace. Keep the class clean.
         const buildClass = className ? `${trimMain} ${className}` : `${trimMain}`;
 
@@ -59,12 +59,12 @@ export default class Button extends Component {
             this.handleErrors(errorMsg.multiType);
         }
 
-        return styles[`btn-cl-${btnType}`] || '';
+        return styles[`${btnType}`] || '';
     };
 
     handleIcon = child => (
-        <div className={styles['os-btn-icon-wrapper']}>
-            <span className={styles['os-btn-icon']}>{this.props.icon}</span>
+        <div className={styles.wrapper}>
+            <span className={styles.icon}>{this.props.icon}</span>
             {child}
         </div>
     )

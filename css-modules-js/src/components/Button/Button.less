@@ -18,7 +18,7 @@
 @btn-smPadLeftRight: 15px;
 @btn-xsPadLeftRight: 10px;
 // BUTTONS
-.os-btn-cl {
+.default {
     position: relative;
     background-color: @sg_colorBtn;
     color: @sg_colorBtnText;
@@ -44,43 +44,6 @@
         text-decoration: none;
     }
 
-    // SIZES
-    &.btn-cl-xs {
-        font-size: @btn-xsFontSize;
-        height: @btn-xsHeight;
-        padding: 0px @btn-xsPadLeftRight;
-        &.rounded {
-            border-radius: @btn-xsHeight
-        }
-        a& {
-            line-height: @btn-xsHeight;
-        }
-    }
-    &.btn-cl-sm {
-        font-size: @btn-smFontSize;
-        height: @btn-smHeight;
-        padding: 0px @btn-smPadLeftRight;
-        &.rounded {
-            border-radius: @btn-smHeight;
-        }
-        a& {
-            line-height: @btn-smHeight;
-        }
-    }
-    &.btn-cl-lg {
-        font-size: @btn-lgFontSize;
-        height: @btn-lgHeight;
-        padding: 0px @btn-lgPadLeftRight;
-        &.rounded {
-            border-radius: @btn-lgHeight;
-        }
-        a& {
-            line-height: @btn-lgHeight;
-        }
-    }
-    &.full-width {
-        width: 100%;
-    }
     // INTERACTIONS
     &:hover {
         box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
@@ -89,12 +52,7 @@
         border: none;
         box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
     }
-    &.btn-cl-disabled {
-        border: 1px solid #CED1D5;
-        pointer-events: none;
-        cursor: not-allowed;
-        opacity: .5;
-    }
+    
     // ICON BUTTONS
     &.os-btn-cl-icon {
         &.icon-only {
@@ -133,201 +91,247 @@
             margin-top: 7px;
         }
     }
-    // PRIMARY BUTTON
-    &.btn-cl-primary {
-        background-color: @sg_colorBtnPrimary;
-        color: @sg_colorBtnPrimaryText;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnPrimaryHover;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnPrimaryPress;
-        }
-    }
-    // SECONDARY
-    &.btn-cl-secondary {
-        background-color: @sg_colorBtnSecondary;
-        color: @sg_colorBtnSecondaryText;
-        border: 1px solid @sg_colorBtnSecondaryBrd;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnSecondaryHover;
-            box-shadow: none;
-        }
-        &:active,
-        &.os-btn-cl-icon:active {
-            background-color: @sg_colorBtnSecondaryPress;
-        }
-        // ICON STYLING
-        &.os-btn-cl-icon:not(:empty):before {
-            background-color: @sg_colorBtnSecondaryHover;
-        }
-    }
-    // SECONDARY LIGHT
-    &.btn-cl-secondary-light {
-        background-color: @sg_colorBtnSecondaryLight;
-        color: @sg_colorBtnSecondaryLightText;
-        border: 1px solid @sg_colorBtnSecondaryLightBrd;
-    }
-    &.btn-cl-danger-light {
-        background-color: @sg_colorBtnDangerLightBtn;
-        color: @sg_colorBtnDangerLightText;
-        border: 1px solid @sg_colorBtnDangerLightBrd;
-    }
-    // TERTIARY
-    &.btn-cl-tertiary {
-        background-color: @sg_colorBtnTertiary;
-        color: @sg_colorBtnTertiaryText;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnTertiaryHover;
-            box-shadow: none;
-        }
-        &:active,
-        &.os-btn-cl-icon:active {
-            background-color: @sg_colorBtnTertiaryPress;
-        }
-    }
-    // SUCCESS
-    &.btn-cl-success {
-        background-color: @sg_colorBtnSuccess;
-        color: @sg_colorBtnSuccessText;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnSuccessHover;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnSuccessPress;
-        }
-    }
-    // BORDERED
-    &.btn-cl-bordered {
-        border: 1px solid #CED1D5;
-    }
-    // BRAND BUTTON
-    &.btn-cl-brand {
-        background-color: @sg_colorBtnBrand;
-        color: @sg_colorWhite;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnBrandHover;
-            box-shadow: none;
-        }
-        &:active,
-        &.os-btn-cl-icon:active {
-            background-color: @sg_colorBtnBrandPress;
-        }
-    }
-    // LINK
-    &.btn-cl-link {
-        background-color: @sg_colorWhite;
-        color: @sg_colorTextLink;
-        height: auto;
-        padding: 0;
-        box-shadow: none;
-        text-decoration: none;
-    }
-    /* MARKETING BUTTONS */
-    &.btn-cl-marketing {
-        background-color: @sg_colorBtnMarketing;
-        color: @sg_colorBtnMarketingText;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnMarketingHover;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnMarketingPress;
-        }
-    }
-    &.btn-cl-campaign {
-        background-color: @sg_colorBtnCampaign;
-        color: @sg_colorBtnCampaignText;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnCampaign;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnCampaign;
-        }
-    }
-    &.btn-cl-campaign-light {
-        background-color: @sg_colorBtnCampaignLight;
-        color: @sg_colorBtnCampaignLightText;
-        border: 1px solid @sg_colorBtnCampaignLightBrd;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnCampaignLight;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnCampaignLight;
-        }
-    }
-    &.btn-cl-marketing-light {
-        background-color: @sg_colorBtnMarketingLight;
-        color: @sg_colorBtnMarketingLightText;
-        border: 1px solid @sg_colorBtnMarketingLightBrd;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnMarketingLight;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnMarketingLight;
-        }
-    }
-    &.btn-cl-marketing-light-alt {
-        background-color: @sg_colorBtnMarketingLightAlt;
-        color: @sg_colorBtnMarketingLightAltText;
-        border: 1px solid @sg_colorBtnMarketingLightAltBrd;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorBtnMarketingLightAlt;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorBtnMarketingLightAlt;
-        }
-    }
-    /*
-      * TBD
-      */
-    // LOYALTY BUTTON - TBD
-    &.btn-cl-loyalty {
-        background-color: @sg_colorLoyaltyBtn;
-        border: 1px solid @sg_colorLoyaltyBtnHover;
-        color: @sg_colorWhite;
-        box-shadow: none;
-        &:hover,
-        &.hover {
-            background-color: @sg_colorLoyaltyBtnHover;
-            border: 1px solid @sg_colorLoyaltyPrimary800;
-            box-shadow: none;
-        }
-        &:active {
-            background-color: @sg_colorLoyaltyBtnPress;
-            box-shadow: none;
-        }
-    }
+}
 
-    // Icon button
-    .os-btn-icon-wrapper {
-        display: flex;
-        align-items: center;
-        .os-btn-icon {
-            width: 17px;
-            margin-right: 7px;
-        }
+// PRIMARY BUTTON
+.primary {
+    background-color: @sg_colorBtnPrimary;
+    color: @sg_colorBtnPrimaryText;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnPrimaryHover;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnPrimaryPress;
+    }
+}
+// SECONDARY
+.secondary {
+    background-color: @sg_colorBtnSecondary;
+    color: @sg_colorBtnSecondaryText;
+    border: 1px solid @sg_colorBtnSecondaryBrd;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnSecondaryHover;
+        box-shadow: none;
+    }
+    &:active,
+    &.os-btn-cl-icon:active {
+        background-color: @sg_colorBtnSecondaryPress;
+    }
+    // ICON STYLING
+    &.os-btn-cl-icon:not(:empty):before {
+        background-color: @sg_colorBtnSecondaryHover;
+    }
+}
+// SECONDARY LIGHT
+.secondary-light {
+    background-color: @sg_colorBtnSecondaryLight;
+    color: @sg_colorBtnSecondaryLightText;
+    border: 1px solid @sg_colorBtnSecondaryLightBrd;
+}
+.danger-light {
+    background-color: @sg_colorBtnDangerLightBtn;
+    color: @sg_colorBtnDangerLightText;
+    border: 1px solid @sg_colorBtnDangerLightBrd;
+}
+// TERTIARY
+.tertiary {
+    background-color: @sg_colorBtnTertiary;
+    color: @sg_colorBtnTertiaryText;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnTertiaryHover;
+        box-shadow: none;
+    }
+    &:active,
+    &.os-btn-cl-icon:active {
+        background-color: @sg_colorBtnTertiaryPress;
+    }
+}
+// SUCCESS
+.success {
+    background-color: @sg_colorBtnSuccess;
+    color: @sg_colorBtnSuccessText;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnSuccessHover;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnSuccessPress;
+    }
+}
+// BORDERED
+.bordered {
+    border: 1px solid #CED1D5;
+}
+// BRAND BUTTON
+.brand {
+    background-color: @sg_colorBtnBrand;
+    color: @sg_colorWhite;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnBrandHover;
+        box-shadow: none;
+    }
+    &:active,
+    &.os-btn-cl-icon:active {
+        background-color: @sg_colorBtnBrandPress;
+    }
+}
+// LINK
+.link {
+    background-color: @sg_colorWhite;
+    color: @sg_colorTextLink;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
+    text-decoration: none;
+}
+/* MARKETING BUTTONS */
+.marketing {
+    background-color: @sg_colorBtnMarketing;
+    color: @sg_colorBtnMarketingText;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnMarketingHover;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnMarketingPress;
+    }
+}
+.campaign {
+    background-color: @sg_colorBtnCampaign;
+    color: @sg_colorBtnCampaignText;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnCampaign;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnCampaign;
+    }
+}
+.campaign-light {
+    background-color: @sg_colorBtnCampaignLight;
+    color: @sg_colorBtnCampaignLightText;
+    border: 1px solid @sg_colorBtnCampaignLightBrd;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnCampaignLight;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnCampaignLight;
+    }
+}
+.marketing-light {
+    background-color: @sg_colorBtnMarketingLight;
+    color: @sg_colorBtnMarketingLightText;
+    border: 1px solid @sg_colorBtnMarketingLightBrd;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnMarketingLight;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnMarketingLight;
+    }
+}
+.marketing-light-alt {
+    background-color: @sg_colorBtnMarketingLightAlt;
+    color: @sg_colorBtnMarketingLightAltText;
+    border: 1px solid @sg_colorBtnMarketingLightAltBrd;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorBtnMarketingLightAlt;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorBtnMarketingLightAlt;
+    }
+}
+/*
+  * TBD
+  */
+// LOYALTY BUTTON - TBD
+.loyalty {
+    background-color: @sg_colorLoyaltyBtn;
+    border: 1px solid @sg_colorLoyaltyBtnHover;
+    color: @sg_colorWhite;
+    box-shadow: none;
+    &:hover,
+    &.hover {
+        background-color: @sg_colorLoyaltyBtnHover;
+        border: 1px solid @sg_colorLoyaltyPrimary800;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: @sg_colorLoyaltyBtnPress;
+        box-shadow: none;
+    }
+}
+
+// SIZES
+.xs {
+    font-size: @btn-xsFontSize;
+    height: @btn-xsHeight;
+    padding: 0px @btn-xsPadLeftRight;
+    &.rounded {
+        border-radius: @btn-xsHeight
+    }
+    a& {
+        line-height: @btn-xsHeight;
+    }
+}
+.sm {
+    font-size: @btn-smFontSize;
+    height: @btn-smHeight;
+    padding: 0px @btn-smPadLeftRight;
+    &.rounded {
+        border-radius: @btn-smHeight;
+    }
+    a& {
+        line-height: @btn-smHeight;
+    }
+}
+.lg {
+    font-size: @btn-lgFontSize;
+    height: @btn-lgHeight;
+    padding: 0px @btn-lgPadLeftRight;
+    &.rounded {
+        border-radius: @btn-lgHeight;
+    }
+    a& {
+        line-height: @btn-lgHeight;
+    }
+}
+.fullWidth {
+    width: 100%;
+}
+
+.disabled {
+    border: 1px solid #CED1D5;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+ // Icon button
+ .wrapper {
+    display: flex;
+    align-items: center;
+    .icon {
+        width: 17px;
+        margin-right: 7px;
     }
 }
 
 @media(max-width: @xsScreenWidth) {
-    .btn-cl-is-responsive {
+    .responsive {
         width: 100%;
     }
 }

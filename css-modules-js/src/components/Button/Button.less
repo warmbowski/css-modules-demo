@@ -1,5 +1,6 @@
 // RESPONSIVE CONFIG
-@import "../less/responsive/config.less";
+// @import "../less/responsive/config.less";
+@value xsScreenWidth from "../less/responsive/config.less";
 // COLORS
 @import "../less/colors/color-default.less";
 // TYPO
@@ -345,7 +346,7 @@
     }
 }
 
-@media(max-width: @xsScreenWidth) {
+@media(max-width: xsScreenWidth) {
     .responsive {
         width: 100%;
     }
